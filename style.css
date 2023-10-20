@@ -1,36 +1,79 @@
 :root {
-  --primary-colour: #202736;
+  --primary-colour: #090e13;
   --secondary-colour: #c2bdaf;
   --heading-font-family: "Montserrat", sans-serif;
   --paragraph-font-family: "Roboto", sans-serif;
+  --highlight-colour: #20748a;
 }
 
 body {
-  color: var(--primary-colour);
-  background: var(--secondary-colour);
-  padding: 0 40px;
+  color: white;
+  background: var(--primary-colour);
 }
 
 h1,
 h2,
-h3 {
+h3,
+h4 {
   font-family: var(--heading-font-family);
-  font-size: 64px;
   text-transform: uppercase;
   line-height: 110%;
   letter-spacing: 8%;
   margin-bottom: 24px;
 }
 
+h1 {
+  font-size: 64px;
+}
+
+h2 {
+  font-size: 36px;
+}
+
+h3 {
+  font-size: 32px;
+}
+
+h4 {
+  font-size: 20px;
+  margin-bottom: 24px;
+}
+
 p {
   font-family: var(--paragraph-font-family);
   font-size: 16px;
+  font-weight: 300;
   line-height: 150%;
   margin-bottom: 24px;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+img {
+  border-radius: 3px;
+}
+
+svg {
+  color: var(--highlight-colour);
+}
+
+ul {
+  margin-bottom: 24px;
+  list-style-type: none;
+  padding-left: 0px;
+}
+
+li {
+  display: inline;
+  margin-right: 8px;
+  font-family: var(--paragraph-font-family);
+  font-size: 16px;
+  font-weight: 300;
+  color: rgba(255, 255, 255, 0.8);
 }
 
 .p-large {
   font-size: 18px;
+  font-weight: 300;
 }
 
 button {
@@ -40,26 +83,25 @@ button {
   letter-spacing: 2px;
   border-radius: 4px;
   padding: 12px 16px;
-  border: solid 1px var(--primary-colour);
-  background-color: var(--primary-colour);
-  color: white;
+  background-color: white;
+  color: var(--primary-colour);
   text-transform: uppercase;
   transition: all 200ms ease-in-out;
+  border: none;
 }
 
 button:hover {
-  background-color: transparent;
-  color: var(--primary-colour);
+  background-color: var(--highlight-colour);
 }
 
 .secondary-button {
-  background-color: transparent;
-  color: var(--primary-colour);
+  background-color: var(--primary-colour);
+  color: white;
+  font-weight: 300;
 }
 
 .secondary-button:hover {
-  background-color: var(--primary-colour);
-  color: white;
+  background-color: rgba(32, 39, 54, 0.5);
 }
 
 .double-button {
@@ -69,7 +111,20 @@ button:hover {
 }
 
 .hero {
-  margin-top: 80px;
+  background-image: url("/images/background.png");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 100%;
+  height: 100vh;
+  color: white;
+  display: flex;
+  align-items: center;
+  padding: 0 24px;
+}
+
+main {
+  padding: 0 40px;
 }
 
 .centred-text {
@@ -79,20 +134,164 @@ button:hover {
   margin-right: auto;
 }
 
+.feature-section {
+  max-width: 1100px;
+  text-align: center;
+  margin: 120px auto;
+}
+
+.feature-section h2 {
+  margin-bottom: 64px;
+}
+
+.feature-section h4 {
+  margin: 24px 0 16px;
+}
+
+.checker {
+  display: flex;
+  margin-bottom: 120px;
+}
+
+.checker-image {
+  overflow: hidden;
+  flex: 1;
+}
+
+.checker img {
+  width: 100%;
+  max-height: 100%;
+  height: 500px;
+  object-fit: cover;
+}
+
+.checker-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 0 24px;
+}
+
+.checker-text {
+  max-width: 500px;
+}
+
+.checker h3 {
+  margin-bottom: 12px;
+}
+
+.checker p {
+  margin-bottom: 24px;
+}
+
+.faq-section h2 {
+  text-align: center;
+}
+
+.accordion {
+  max-width: 800px;
+  margin: 64px auto;
+}
+
+.accordion p {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.accordion .p-large {
+  margin: 0;
+  color: white;
+  text-transform: none;
+  letter-spacing: normal;
+}
+
+.accordion-item {
+  background-color: transparent;
+  border: 1px solid white;
+}
+
+.accordion-button {
+  background-color: transparent;
+}
+
+.accordion-button:hover {
+  background-color: transparent;
+}
+
+.accordion-button::after {
+  color: white;
+}
+
+.accordion-button:not(.collapsed) {
+  background-color: transparent;
+  box-shadow: none;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+@media (max-width: 1079px) {
+  .checker {
+    flex-direction: column;
+    margin-bottom: 80px;
+  }
+
+  .checker-content {
+    order: 2;
+    margin-top: 40px;
+  }
+
+  .checker-text {
+    max-width: 100%;
+  }
+
+  .checker img {
+    height: 400px;
+    width: 100%;
+  }
+
+  .checker-content {
+    padding: 0;
+  }
+}
+
 @media (max-width: 700px) {
-  body {
-    padding: 0 20px;
+  main {
+    padding: 0 16px;
   }
 
   h1 {
     font-size: 40px;
   }
 
+  h2 {
+    font-size: 32px;
+  }
+
+  h3 {
+    font-size: 24x;
+  }
+
   .p-large {
-    font-size: 18px;
+    font-size: 16px;
   }
 
   .double-button {
     flex-direction: column;
+  }
+
+  .hero {
+    padding: 24px;
+  }
+
+  .feature-section {
+    max-width: 80%;
+  }
+
+  button {
+    width: 100%;
+  }
+
+  .checker-content {
+    padding: 0;
   }
 }
