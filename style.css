@@ -285,6 +285,7 @@ main {
 
   .feature-section {
     max-width: 80%;
+    margin: 80px auto;
   }
 
   button {
