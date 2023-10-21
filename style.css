@@ -489,7 +489,12 @@ input[type="date"]::-webkit-calendar-picker-indicator {
   }
 
   nav {
-    padding: 12px 24px;
+    padding: 24px;
+    justify-content: center;
+  }
+
+  .nav-links {
+    display: none;
   }
 
   .double-button {
