@@ -489,7 +489,7 @@ input[type="date"]::-webkit-calendar-picker-indicator {
   }
 
   nav {
-    padding: 12px;
+    padding: 12px 24px;
   }
 
   .double-button {
@@ -528,5 +528,9 @@ input[type="date"]::-webkit-calendar-picker-indicator {
   .gallery {
     grid-template-columns: repeat(1, 1fr);
     margin-bottom: 80px;
+  }
+
+  .logo img {
+    height: 18px;
   }
 }
