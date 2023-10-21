@@ -57,6 +57,47 @@ a {
   text-decoration: none;
 }
 
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 40px;
+  position: fixed;
+  width: 100%;
+  background-color: transparent;
+  transition: background-color 0.3s ease;
+  z-index: 2;
+  top: 0;
+}
+
+nav.scrolled {
+  background-color: rgba(9, 14, 19, 0.5);
+  backdrop-filter: blur(10px);
+}
+
+.nav-links {
+  display: flex;
+  flex-direction: row;
+  gap: 24px;
+  align-items: center;
+}
+
+.nav-links a {
+  color: rgba(255, 255, 255, 0.5);
+  font-weight: 300;
+  text-transform: uppercase;
+  transition: all 150ms ease-in-out;
+  letter-spacing: 2px;
+}
+
+.nav-links .active {
+  color: white;
+}
+
+.nav-links a:hover {
+  color: white;
+}
+
 img {
   border-radius: 3px;
 }
@@ -281,7 +322,7 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 }
 
 .accordion p {
-  color: rgba(255, 255, 255, 0.5);
+  color: rgba(255, 255, 255, 0.8);
 }
 
 .accordion .p-large {
@@ -408,6 +449,14 @@ input[type="date"]::-webkit-calendar-picker-indicator {
   .checker-form {
     width: 100%;
   }
+
+  .nav-text-link {
+    display: none;
+  }
+
+  .active {
+    display: none;
+  }
 }
 
 @media (max-width: 700px) {
@@ -437,6 +486,10 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 
   .p-large {
     font-size: 16px;
+  }
+
+  nav {
+    padding: 12px;
   }
 
   .double-button {
