@@ -443,6 +443,7 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 .footer-text {
   font-size: 14px;
   color: rgba(255, 255, 255, 0.5);
+  text-align: center;
 }
 
 @media (max-width: 1079px) {
